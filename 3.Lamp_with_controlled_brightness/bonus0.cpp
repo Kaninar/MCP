@@ -24,4 +24,3 @@ void loop()
     analogWrite(LED_PIN2, LED1_brightness);
     analogWrite(LED_PIN3, LED2_brightness);
 }
-//TODO

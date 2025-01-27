@@ -19,4 +19,3 @@ void loop()
 
     analogWrite(LED_PIN, brightness);
 }
-//TODO
