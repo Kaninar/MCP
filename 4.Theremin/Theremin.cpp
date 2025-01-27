@@ -17,4 +17,3 @@ void loop()
 
     tone(BUZZER_PIN, frequency, 20);
 }
-//TODO
