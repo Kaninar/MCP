@@ -3,9 +3,9 @@
 #define BUZZER_PIN 3
 #define LDR_PIN A0
 
-int dot = 250;                   // mc                //точка = ( <=250 мс )
-int dash = dot * 3;              // тире = 3 точки
-int pauseBetweenWords = dot * 7; // пауза между словами = 7 точек
+int dot = 250;
+int dash = dot * 3;
+int pauseBetweenWords = dot * 7;
 
 void setup()
 {
