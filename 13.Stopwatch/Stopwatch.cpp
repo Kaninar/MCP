@@ -1,5 +1,19 @@
 #include <Arduino.h>
 
+/*
+     --a--
+    |     |
+    f     b
+    |     |
+     --g--
+    |     |
+    e     c
+    |     |
+     --d--   *DP
+
+*/
+// DP g f e d c b a
+
 #define FIRST_SEGMENT_PIN 2
 #define SEGMENT_COUNT 7
 
@@ -46,4 +60,3 @@ void loop()
         digitalWrite(i + FIRST_SEGMENT_PIN, enableSegment);
     }
 }
-//TODO
