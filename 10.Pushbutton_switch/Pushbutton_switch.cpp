@@ -17,7 +17,7 @@ void loop()
     // определить момент «клика» несколько сложнее, чем факт того,
     // что кнопка сейчас просто нажата. Для определения клика мы
     // сначала понимаем, отпущена ли кнопка прямо сейчас...
-    boolean buttonIsUp = digitalRead(BUTTON_PIN);
+    bool buttonIsUp = digitalRead(BUTTON_PIN);
 
     // ...если «кнопка была отпущена и (&&) не отпущена сейчас»...
     if (buttonWasUp && !buttonIsUp)
@@ -39,4 +39,3 @@ void loop()
     // запоминаем последнее состояние кнопки для новой итерации
     buttonWasUp = buttonIsUp;
 }
-//TODO
