@@ -43,4 +43,3 @@ void loop()
         digitalWrite(i + FIRST_LED_PIN, enableSegment);
     }
 }
-//TODO
