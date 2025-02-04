@@ -21,13 +21,15 @@ void loop()
     plusUp = handleClick(PLUS_BUTTON_PIN, plusUp, +35);
     minusUp = handleClick(MINUS_BUTTON_PIN, minusUp, -35);
 }
-// Собственная функция с 3 параметрами: номером пина с кнопкой
-// (buttonPin), состоянием до проверки (wasUp) и градацией
-// яркости при клике на кнопку (delta). Функция возвращает
-// (англ. return) обратно новое, текущее состояние кнопки
-boolean handleClick(int buttonPin, boolean wasUp, int delta)
+`
+    // Собственная функция с 3 параметрами: номером пина с кнопкой
+    // (buttonPin), состоянием до проверки (wasUp) и градацией
+    // яркости при клике на кнопку (delta). Функция возвращает
+    // (англ. return) обратно новое, текущее состояние кнопки
+    boolean
+    handleClick(int buttonPin, boolean wasUp, int delta)
 {
-    boolean isUp = digitalRead(buttonPin);
+    bool isUp = digitalRead(buttonPin);
     if (wasUp && !isUp)
     {
         delay(10);
@@ -38,4 +40,3 @@ boolean handleClick(int buttonPin, boolean wasUp, int delta)
     }
     return isUp; // возвращаем значение обратно, в вызывающий код
 }
-//TODO
