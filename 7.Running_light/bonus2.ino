@@ -1,5 +1,5 @@
 #include <Arduino.h>
-// Переделайте программу так, чтобы вместо int pin = FIRST_LED_PIN + (ms / 120) % 10 перемещением огонька управлял цикл for
+// 3. Переделайте программу так, чтобы вместо int pin = FIRST_LED_PIN + (ms / 120) % 10 перемещением огонька управлял цикл for
 #define FIRST_LED_PIN 2
 #define LAST_LED_PIN 11
 
