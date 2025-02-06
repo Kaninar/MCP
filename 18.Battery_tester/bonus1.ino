@@ -1,3 +1,52 @@
 #include <Arduino.h>
-// 2. Совместите отсчет времени и измерение напряжения. Отобразите все данные на дисплее. Отправляйте их раз в 10 секунд на компьютер.
-// Теперь вы можете выводить без компьютера и проводов любые данные, с которыми работаете, и использовать это как в режиме эксплуатации вашего устройства, так и во время отладки !
+#include <LCD_1602_RUS.h>
+
+#define DIODE_DROP 0.7
+
+LCD_1602_RUS lcd(0x27, 16, 2);
+
+int count = 0;
+
+void setup()
+{
+    lcd.init();
+    // lcd.backlight();
+    lcd.print("Время: ");
+    lcd.setCursor(0, 1);
+    lcd.print("Батарея: ");
+}
+
+void loop()
+{
+    // время
+    unsigned long ms = millis();
+
+    unsigned int seconds = ms / 1000;
+    unsigned int milliseconds = ms % 1000;
+
+    String time = String(seconds) + ":" + String(milliseconds);
+
+    // напряжение
+
+    float voltage = analogRead(A0) / 1024.0 * 10.0;
+
+    if (voltage > 0.1)
+        voltage += DIODE_DROP;
+
+    // вывод на дисплей
+
+    lcd.setCursor(7, 0);
+    lcd.print(time);
+
+    lcd.setCursor(9, 1);
+    lcd.print(voltage, 2);
+    lcd.print(" V");
+
+    // вывод в серийный порт
+
+    if (millis() / 10000 > count)
+    {
+        Serial.println();
+        count++;
+    }
+}
