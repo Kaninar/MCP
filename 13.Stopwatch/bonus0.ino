@@ -1,5 +1,4 @@
 #include <Arduino.h>
-// 1. Измените код, чтобы индикатор отсчитывал десятые секунды.
 
 byte numberSegments[10] = {
     0b00111111, // 0
@@ -22,7 +21,7 @@ void setup()
 
 void loop()
 {
-    int number = (millis() / 10000) % 10;
+    int number = (millis() / 10000) % 10; // делитель увеличен в 10 раз
 
     int mask = numberSegments[number];
 

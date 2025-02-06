@@ -1,5 +1,4 @@
 #include <Arduino.h>
-// 1. Измените код программы таким образом, чтобы индикатор включался при 0 градусов и его показания прирастали на одно деление каждые 5 градусов.
 
 #include <math.h>
 
@@ -25,7 +24,7 @@ void loop()
 
     for (int i = 0; i < LED_COUNT; ++i)
     {
-        boolean enableSegment = (temperature >= i * 5);
+        bool enableSegment = (temperature >= i * 5); // одно деление равно 5 теперь
         digitalWrite(i + FIRST_LED_PIN, enableSegment);
     }
 }

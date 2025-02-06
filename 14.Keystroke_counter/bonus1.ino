@@ -1,8 +1,8 @@
 #include <Arduino.h>
-// 2.Замените кнопку на датчик света (фоторезистор в схеме делителя напряжения) и переделайте программу так, чтобы индикатор цифрой показывал уровень освещенности.
-#define DATA_PIN 13  // пин данных (англ. data)
-#define LATCH_PIN 12 // пин строба (англ. latch)
-#define CLOCK_PIN 11 // пин такта (англ. clock)
+
+#define DATA_PIN 13
+#define LATCH_PIN 12
+#define CLOCK_PIN 11
 #define LDR_PIN A0
 
 byte segments[] = {

@@ -1,5 +1,5 @@
 #include <Arduino.h>
-// 2. Добавьте в схему пьезопищалку и доработайте программу так, чтобы срабатывала звуковая сигнализация при достижении температуры, например, 25 градусов.
+
 #include <math.h>
 
 #define FIRST_LED_PIN 2
@@ -24,7 +24,7 @@ void loop()
 
     for (int i = 0; i < LED_COUNT; ++i)
     {
-        boolean enableSegment = (temperature >= i * 5);
+        bool enableSegment = (temperature >= i * 5);
         digitalWrite(i + FIRST_LED_PIN, enableSegment);
     }
 

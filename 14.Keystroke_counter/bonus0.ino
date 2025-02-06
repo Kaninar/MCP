@@ -1,12 +1,12 @@
 #include <Arduino.h>
-// 1.Заставьте shiftOut() отправлять биты, начиная со старшего, и измените код так, чтобы счетчик по-прежнему показывал арабские цифры.
-#define DATA_PIN 13  // пин данных (англ. data)
-#define LATCH_PIN 12 // пин строба (англ. latch)
-#define CLOCK_PIN 11 // пин такта (англ. clock)
+
+#define DATA_PIN 13
+#define LATCH_PIN 12
+#define CLOCK_PIN 11
 #define BUTTON_PIN 10
 
 int clicks = 0;
-boolean buttonWasUp = true;
+bool buttonWasUp = true;
 byte segments[] = {
     0b00111111, // 0
     0b00000110, // 1
@@ -27,11 +27,12 @@ void setup()
     pinMode(BUTTON_PIN, INPUT_PULLUP);
 }
 
-byte reverse(byte b)
+byte inverse(byte b) // функция для инверсии байта
 {
     b = (b & 0xF0) >> 4 | (b & 0x0F) << 4;
     b = (b & 0xCC) >> 2 | (b & 0x33) << 2;
     b = (b & 0xAA) >> 1 | (b & 0x55) << 1;
+
     return b;
 }
 
@@ -47,8 +48,8 @@ void loop()
     buttonWasUp = digitalRead(BUTTON_PIN);
 
     digitalWrite(LATCH_PIN, LOW);
-    // bitOrder заменил на MSBFIRST(most significant bit first) — начиная со старшего
-    shiftOut(DATA_PIN, CLOCK_PIN, MSBFIRST, reverse(segments[clicks]));
+    // bitOrder изменил на MSBFIRST(most significant bit first) — начиная со старшего
+    shiftOut(DATA_PIN, CLOCK_PIN, MSBFIRST, inverse(segments[clicks]));
 
     digitalWrite(LATCH_PIN, HIGH);
 }

@@ -1,17 +1,18 @@
 #include <Arduino.h>
-// 1.Перед таблицей данных о температуре добавьте заголовок (например, "Meteostation").
+
 #include <math.h>
-int minute = 1;
 
 #define TERMIST_B 4300
 
 #define VIN 5.0
 
+int minute = 1;
+
 void setup()
 {
     Serial.begin(9600);
 
-    Serial.println("Metiostation"); // добавлена эта строчка
+    Serial.println("Metiostation");
     Serial.println("Minute\tTemperature");
 }
 

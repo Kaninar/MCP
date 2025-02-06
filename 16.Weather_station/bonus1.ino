@@ -1,17 +1,17 @@
 #include <Arduino.h>
-// 2. Добавьте столбец, содержащий количество секунд, прошедших с момента запуска микроконтроллера. Можно уменьшить интервал передачи данных.
+
 #include <math.h>
-int minute = 1;
 
 #define TERMIST_B 4300
 
 #define VIN 5.0
 
+int minute = 1;
+
 void setup()
 {
     Serial.begin(9600);
 
-    Serial.println("Metiostation"); // добавлена эта строчка
     Serial.println("Minute\tTemperature");
 }
 

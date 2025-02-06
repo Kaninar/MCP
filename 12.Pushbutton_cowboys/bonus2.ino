@@ -1,7 +1,7 @@
 #include <Arduino.h>
-// 3. Добавьте в игру еще двух ковбоев!
+
 #define BUZZER_PIN 8
-const unsigned char BUTTON_PINS[] = {3, 5, 11, 13};
+const unsigned char BUTTON_PINS[] = {3, 5, 11, 13}; // добалено по два пина
 const unsigned char LED_PINS[] = {2, 4, 10, 12};
 #define PLAYER_COUNT 4
 

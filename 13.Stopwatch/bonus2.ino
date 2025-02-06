@@ -3,19 +3,6 @@
 #define FIRST_SEGMENT_PIN 2
 #define SEGMENT_COUNT 8
 
-/*
-     --a--
-    |     |
-    f     b
-    |     |
-     --g--
-    |     |
-    e     c
-    |     |
-     --d--   *DP
-
-*/
-// DP  gfedcba
 byte numberSegments[10] = {
     0b10111111, // 0
     0b00000110, // 1

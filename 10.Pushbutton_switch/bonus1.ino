@@ -1,9 +1,9 @@
 #include <Arduino.h>
-// 2. Добавьте в схему еще одну кнопку и доработайте код, чтобы светодиод зажигался только при нажатии обеих кнопок.
+
 #define LED_PIN 13
 const int BUTTON_PINS[2] = {3, 4};
 
-bool wasAnyUp = true;
+bool wasAnyUp = true; // была ли поднята любая из кнопок
 bool ledEnabled = false;
 
 void setup()
@@ -16,17 +16,17 @@ void setup()
 
 void loop()
 {
-    bool isAnyUp = digitalRead(BUTTON_PINS[0]) |
+    bool isAnyUp = digitalRead(BUTTON_PINS[0]) | // поднята любая из кнопок
                    digitalRead(BUTTON_PINS[1]);
 
     if (wasAnyUp && !isAnyUp)
     {
         delay(10);
 
-        isAnyUp = digitalRead(BUTTON_PINS[0]) |
+        isAnyUp = digitalRead(BUTTON_PINS[0]) | // уточнение, что любая из кнопок поднята
                   digitalRead(BUTTON_PINS[1]);
 
-        if (!isAnyUp)
+        if (!isAnyUp) // если обе опущены
         {
             ledEnabled = !ledEnabled;
             digitalWrite(LED_PIN, ledEnabled);

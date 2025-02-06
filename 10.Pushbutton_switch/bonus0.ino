@@ -1,5 +1,5 @@
 #include <Arduino.h>
-// 1. Измените код так, чтобы светодиод переключался только после отпускания кнопки.
+
 #define BUTTON_PIN 3
 #define LED_PIN 13
 
@@ -17,11 +17,11 @@ void loop()
 {
     bool buttonIsUp = digitalRead(BUTTON_PIN);
 
-    if (!buttonWasUp && buttonIsUp) // была ли кнопка нажата и подята ли она сейчас
+    if (!buttonWasUp && buttonIsUp) // БЫЛА ли кнопка нажата и подята ли она СЕЙЧАС
     {
         delay(10);
 
-        buttonIsUp = digitalRead(BUTTON_PIN); // действительно ли поднята сейчас
+        buttonIsUp = digitalRead(BUTTON_PIN); // действительно ли поднята СЕЙЧАС
 
         if (buttonIsUp)
         {

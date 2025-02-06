@@ -1,5 +1,5 @@
 #include <Arduino.h>
-// 2. В игре есть лазейка: кнопку можно зажать до сигнала «пли!» и таким образом сразу же выиграть. Дополните программу так, чтобы так выиграть было нельзя.
+
 #define BUZZER_PIN 7
 const unsigned char BUTTON_PINS[] = {2, 11};
 const unsigned char LED_PINS[] = {8, 13};
@@ -20,16 +20,16 @@ void loop()
 {
     delay(random(2000, 7000));
 
-    bool wasUp[] = {digitalRead(BUTTON_PINS[0]),
+    bool wasUp[] = {digitalRead(BUTTON_PINS[0]), // подняты ли кнопки до сигнала
                     digitalRead(BUTTON_PINS[1])};
 
     tone(BUZZER_PIN, 500, 250);
 
     for (char player = 0;; player = (player + 1) % PLAYER_COUNT)
     {
-        bool isUp = digitalRead(BUTTON_PINS[player]);
+        bool isUp = digitalRead(BUTTON_PINS[player]); // проверка состояния i-ой кнопки
 
-        if (!wasUp[player] & isUp)
+        if (!wasUp[player] & isUp) // проверка на жульничество
             wasUp[player] = true;
 
         if (!isUp && wasUp[player])
