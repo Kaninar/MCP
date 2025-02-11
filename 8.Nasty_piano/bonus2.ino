@@ -1,5 +1,5 @@
 #include <Arduino.h>
-// 3. Подключите кнопки по схеме со стягивающим резистором и измените программу так, чтобы она продолжала работать.
+
 #define BUZZER_PIN 13
 #define FIRST_KEY_PIN 7
 #define KEY_COUNT 3
