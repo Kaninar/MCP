@@ -32,3 +32,7 @@ void loop()
 
     buttonWasUp = buttonIsUp;
 }
+/*Условие для смены состояния используются наоборот. Необходимо, чтобы до проверки текущего состояние кнопка была опущена, а затем поднята, что можно интерпретировать
+ыкак отпускание кнопки.
+*/
+// https://drive.google.com/file/d/1siLfCRiP_NB2dd9ZUqbZwgOCOkD6ugqD/view?usp=drive_link

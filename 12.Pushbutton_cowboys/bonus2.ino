@@ -3,7 +3,7 @@
 #define BUZZER_PIN 8
 const unsigned char BUTTON_PINS[] = {3, 5, 11, 13}; // добалено по два пина
 const unsigned char LED_PINS[] = {2, 4, 10, 12};
-#define PLAYER_COUNT 4
+#define PLAYER_COUNT 4 // уведичено на два
 
 void setup()
 {
@@ -47,3 +47,6 @@ void loop()
         }
     }
 }
+/*Код аналогичен прошлому заданию, но для новых двух игроков добавлены 2 кнопки и 2 светодиода.
+ */
+// https://drive.google.com/file/d/1rbN1zaknuDr-yxuOGcyNoekXsI47Q9PO/view?usp=drive_link

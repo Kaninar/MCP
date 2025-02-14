@@ -35,3 +35,6 @@ void loop()
 
     wasAnyUp = isAnyUp;
 }
+/*Вместо проверки одного пина происходит проверка двух, если хоть одна кнопка поднята, то ничего произойдёт. Чтобы событие произошло `isAnyUp` должно быть 0, а `wasAnyUp` 1.
+ */
+// https://drive.google.com/file/d/1sf_PtDK3uJsFRO2UwJe2zkH6uWJHijBA/view?usp=drive_link

@@ -35,3 +35,5 @@ void loop()
         digitalWrite(i + FIRST_SEGMENT_PIN, enableSegment);
     }
 }
+/*Изменена маска для первого знака нижний сегмент (d) отключен и включен средний сегмент (g)*/
+// https://drive.google.com/file/d/1r8o0SdLdtkMYGiyKFKV97nKClXEWA3ew/view?usp=drive_link

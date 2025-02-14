@@ -36,7 +36,7 @@ void loop()
     plusUp = handleClick(PLUS_BUTTON_PIN, plusUp, +35);
     minusUp = handleClick(MINUS_BUTTON_PIN, minusUp, -35);
 }
-
-/*
-
+/* Кнопки подключены к пинам с стягивающим резистором. Функция `handleCick()` проверяет нажат ли любой из пинов, если нажата,
+то значение `brightness` изменяется на `delta` согласно указанному значению. Новое значение `brightness` будет выведено при следующей итерации `loop()`
 */
+// https://drive.google.com/file/d/1t265Z6a1Qa7KaxkH0kXKWjqhivgB_U_2/view?usp=drive_link

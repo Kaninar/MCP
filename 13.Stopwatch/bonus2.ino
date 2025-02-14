@@ -1,5 +1,5 @@
 #include <Arduino.h>
-// 3.Дополните схему и программу таким образом, чтобы сегмент-точка включался при прохождении четных чисел и выключался на нечетных
+
 #define FIRST_SEGMENT_PIN 2
 #define SEGMENT_COUNT 8
 
@@ -35,3 +35,5 @@ void loop()
         digitalWrite(i + FIRST_SEGMENT_PIN, enableSegment);
     }
 }
+/*Для демонстраци чётных числе можно включить последний бит в массиве масок для каждого чётного числа, либо путем деление переменной `number` на 2 по модулю и побитными операциеями включать послединй бит динамически*/
+// https://drive.google.com/file/d/1rKNByMGZBpE3jGUwoaFQTUwh-MV_jofg/view?usp=drive_link

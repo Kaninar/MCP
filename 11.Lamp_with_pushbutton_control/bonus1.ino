@@ -7,11 +7,9 @@
 const int BUTTONS[2] = {PLUS_BUTTON_PIN, MINUS_BUTTON_PIN};
 
 int brightness = 100;
-bool plusUp = true;
-bool minusUp = true;
 bool wasUp[2] = {true, true};
 
-int getBrightness(int buttonPin)
+int getBrightness()
 {
     if (!wasUp[0])
         brightness += 35;
@@ -46,5 +44,11 @@ void setup()
 
 void loop()
 {
-    analogWrite(LED_PIN, getBrightness());
+    analogWrite(LED_PIN, getBrightness()); // функция возвращает значение яркости прямо в функцию analogWrite()
+
+    handleClick();
 }
+/*
+Опеределение текущего состояник кнопок происходит в функции `handleClick`. Расчёт яркости происходит отдельно в функции `getBrightness` из записанного состояния кнопок в массиве `wasUp`.
+*/
+// https://drive.google.com/file/d/1sqKIU250QPInDy3OGYQ9eiJZod9uH4ji/view?usp=drive_link

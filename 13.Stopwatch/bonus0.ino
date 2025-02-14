@@ -21,7 +21,7 @@ void setup()
 
 void loop()
 {
-    int number = (millis() / 10000) % 10; // делитель увеличен в 10 раз
+    int number = (millis() / 100) % 10; // делитель уменьшен в 10 раз
 
     int mask = numberSegments[number];
 
@@ -32,3 +32,5 @@ void loop()
         digitalWrite(i + FIRST_SEGMENT_PIN, enableSegment);
     }
 }
+/*Изменён операнд в целочисленном делении.*/
+// https://drive.google.com/file/d/1r1Q9_4qLQV0Li0EShhYpeYFfO-UzTqTO/view?usp=drive_link
