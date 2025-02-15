@@ -27,7 +27,9 @@ void loop()
         bool enableSegment = (temperature >= i * 5);
         digitalWrite(i + FIRST_LED_PIN, enableSegment);
     }
-
+    // условие для писка
     if (temperature >= 25)
         tone(BUZZ_PIN, 1500, 100);
 }
+/*Добавлено услови для сигнала, где температура должна быть больше 25 градусов.*/
+//

@@ -12,7 +12,7 @@ void setup()
 {
     Serial.begin(9600);
 
-    Serial.println("Metiostation");
+    Serial.println("Metiostation"); // добавлена эта строчка
     Serial.println("Minute\tTemperature");
 }
 
@@ -30,3 +30,5 @@ void loop()
     delay(60000);
     ++minute;
 }
+/*Добавлена строчка вывода сообщения "Meteostation" перед заголовками таблицы.*/
+//

@@ -38,3 +38,5 @@ void loop()
 
     digitalWrite(LATCH_PIN, HIGH);
 }
+/*Проверка нажатия заменена на чтетие значений с пина фоторезистора для и маппинг этого значения для определения текущей цифры.*/
+// https://drive.google.com/file/d/1qqMYZPTkZPXkZNk1Ye791DZcBUs-V9sO/view?usp=drive_link

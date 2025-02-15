@@ -29,9 +29,9 @@ void setup()
 
 byte inverse(byte b) // функция для инверсии байта
 {
-    b = (b & 0xF0) >> 4 | (b & 0x0F) << 4;
-    b = (b & 0xCC) >> 2 | (b & 0x33) << 2;
-    b = (b & 0xAA) >> 1 | (b & 0x55) << 1;
+    b = (b & 0xF0) >> 4 | (b & 0x0F) << 4; //(b & 11110000) >> 4 | (b & 00001111) << 4
+    b = (b & 0xCC) >> 2 | (b & 0x33) << 2; //(b & 11001100) >> 2 | (b & 00110011) << 2
+    b = (b & 0xAA) >> 1 | (b & 0x55) << 1; //(b & 10101010) >> 1 | (b & 01010101) << 1
 
     return b;
 }
@@ -53,3 +53,6 @@ void loop()
 
     digitalWrite(LATCH_PIN, HIGH);
 }
+/*`bitOrder` изменён на `MSBFIRST` (most significant bit first) — начиная со старшего и добавлена функция для инверсии байта.
+Сначала меняются местами половины бита, потом четверити, затем биты отдельно.*/
+// https://drive.google.com/file/d/1r0isiLKBoCDbtxNHvlBSIN49N4np4UJB/view?usp=drive_link

@@ -12,7 +12,7 @@ void setup()
 {
     Serial.begin(9600);
 
-    Serial.println("Minute\tTemperature");
+    Serial.println("Minute\tSecond\tTemperature\t");
 }
 
 void loop()
@@ -24,10 +24,12 @@ void loop()
 
     Serial.print(minute);
     Serial.print("\t");
-    Serial.print(temperature);
+    Serial.print(millis() / 1000 % 60); // дабавлен вывод секунд
     Serial.print("\t");
-    Serial.println(millis());
+    Serial.println(temperature);
 
-    delay(10000);
+    delay(1000); // изменена задержка
     ++minute;
 }
+/*Была изменена задерка для вывода информации и добавлен столбец с выводом секунд.*/
+//

@@ -1,9 +1,10 @@
 #include <Arduino.h>
+
 #include <Servo.h>
 
 Servo myServo;
 
-const unsigned char angles[]{45, 135, 87, 0, 65, 90, 180, 150};
+const unsigned char angles[]{45, 135, 87, 0, 65, 90, 180, 150}; // создан массив
 
 void setup()
 {
@@ -13,10 +14,9 @@ void setup()
 void loop()
 {
     int val = analogRead(A0);
+    int index = int((val / 1023.0) * 7);
 
-    int mapped = map(val, 0, 1023, 0, 8);
-
-    myServo.write(angles[mapped]);
-
-    delay(500);
+    myServo.write(angles[index]);
 }
+/*Был добавлен массив углов `angels`. При помощи аналогичной формулы, как в скетче, опередяется индекс, для сервопривода*/
+// https://drive.google.com/file/d/1uv0emf_IOBFAr75kJuOdD-2QabFoe0eg/view?usp=drive_link

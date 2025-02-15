@@ -1,4 +1,5 @@
 #include <Arduino.h>
+
 #include <Servo.h>
 
 #define POT_MAX_ANGLE 270.0
@@ -17,3 +18,6 @@ void loop()
 
     myServo.write(angle);
 }
+/*Подключаем библиотеку для управления сервоприводом `Servo.h`, затем явно создаём объект типа Servo. Чтобы подключить пин используется функция `attach()`.
+Высчитываем угол для сервопривода (180°), при том, что максимальный угол потанциометра - 270° и задаём угол при помощи функции `write()`*/
+// https://drive.google.com/file/d/1qIUIxggRfEGyDiqj-gE6pYWjAEpNnKMj/view?usp=drive_link

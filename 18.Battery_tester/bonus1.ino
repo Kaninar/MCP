@@ -46,7 +46,12 @@ void loop()
 
     if (millis() / 10000 > count)
     {
-        Serial.println();
+        Serial.print(time);
+        Serial.print('\t')
+            Serial.print(voltage);
+        Serial.println(" V");
         count++;
     }
 }
+/*Объединения скетча и первого самостоятельного задания и вывод инвормации в серийный порт каждые 10 секунд.*/
+//

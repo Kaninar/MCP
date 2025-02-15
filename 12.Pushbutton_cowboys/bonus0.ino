@@ -1,10 +1,10 @@
 #include <Arduino.h>
 
-#define BUZZER_PIN 7
+#define BUZZER_PIN 12
 #define PLAYER_COUNT 2
 
-const unsigned char BUTTON_PINS[PLAYER_COUNT] = {2, 11};
-const unsigned char LED_PINS[PLAYER_COUNT] = {8, 13};
+const unsigned char BUTTON_PINS[PLAYER_COUNT] = {3, 13};
+const unsigned char LED_PINS[PLAYER_COUNT] = {9, 11};
 
 void setup()
 {
@@ -35,6 +35,5 @@ void loop()
         }
     }
 }
-/*Изменён интервал для случайной дительности задержки перед сигналом на [10:15] секунд.
- */
-//
+/*Изменён интервал для случайной дительности задержки перед сигналом на [10:15] секунд.*/
+// https://drive.google.com/file/d/1ut251iv-9cC4uEmZFwMjXyWLjMWBs2GR/view?usp=drive_link

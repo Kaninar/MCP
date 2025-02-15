@@ -28,3 +28,5 @@ void loop()
         digitalWrite(i + FIRST_LED_PIN, enableSegment);
     }
 }
+/*Изменена формула для определения переменой `enableSegment` на i*5, т.е. одно деление шкалы равно 5 градусам.*/
+//

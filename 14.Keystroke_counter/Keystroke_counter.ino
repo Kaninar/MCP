@@ -37,8 +37,11 @@ void loop()
     }
 
     buttonWasUp = digitalRead(BUTTON_PIN);
-
     digitalWrite(LATCH_PIN, LOW);
     shiftOut(DATA_PIN, CLOCK_PIN, LSBFIRST, segments[clicks]);
     digitalWrite(LATCH_PIN, HIGH);
 }
+/*Переменная `clicks` хранит количество произведённых нажатий кнопки. Переменная `buttonWasUp` определят была пнопка отжата в предыдущей итерации.
+Производим отслеживание нажатия используя код и прошлых экспериментов текущее значение инкрементируется и делится по модулю на 10. Затем нужно притянуть пин строба к земле,
+передача данных и подача напряжения на пин строба.*/
+// https://drive.google.com/file/d/1qoAJvkUmCFZHSbhUPptJTHnL2TOWLpX_/view?usp=drive_link
