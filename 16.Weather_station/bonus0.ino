@@ -2,7 +2,7 @@
 
 #include <math.h>
 
-#define TERMIST_B 4300
+#define TERMIST_B 3900
 
 #define VIN 5.0
 
@@ -27,8 +27,9 @@ void loop()
     Serial.print("\t");
     Serial.println(temperature);
 
-    delay(60000);
+    delay(1000);
     ++minute;
 }
-/*Добавлена строчка вывода сообщения "Meteostation" перед заголовками таблицы.*/
-//
+/*Добавлена строчка вывода сообщения "Meteostation" перед заголовками таблицы.
+Задержка для для вывода информации уменьшена для ускорения демонстрации процесса.*/
+// https://drive.google.com/file/d/1mKQvH3YoEogMyZLeIWWAAS8Zmqi-NtBn/view?usp=drive_link

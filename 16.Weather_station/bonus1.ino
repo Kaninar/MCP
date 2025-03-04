@@ -2,7 +2,7 @@
 
 #include <math.h>
 
-#define TERMIST_B 4300
+#define TERMIST_B 3900
 
 #define VIN 5.0
 
@@ -24,12 +24,13 @@ void loop()
 
     Serial.print(minute);
     Serial.print("\t");
-    Serial.print(millis() / 1000 % 60); // дабавлен вывод секунд
+    Serial.print(millis() / 1000); // дабавлен вывод секунд
     Serial.print("\t");
     Serial.println(temperature);
 
     delay(1000); // изменена задержка
     ++minute;
 }
-/*Была изменена задерка для вывода информации и добавлен столбец с выводом секунд.*/
-//
+/*Была изменена задерка для вывода информации и добавлен столбец с выводом секунд.
+Минутная задержка уменьшина для ускорения демонстрации работы программы.*/
+// https://drive.google.com/file/d/1q9hy2wv88vCGXhjNaXuIuq_w7BisJ-Gm/view?usp=drive_link

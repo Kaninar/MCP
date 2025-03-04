@@ -29,4 +29,4 @@ void loop()
     }
 }
 /*Изменена формула для определения переменой `enableSegment` на i*5, т.е. одно деление шкалы равно 5 градусам.*/
-//
+// https://drive.google.com/file/d/1K2w3V5FypAifO-oJGhDf7XJIGfwhTzWY/view?usp=drive_link

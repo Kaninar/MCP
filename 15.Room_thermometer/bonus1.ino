@@ -31,5 +31,5 @@ void loop()
     if (temperature >= 25)
         tone(BUZZ_PIN, 1500, 100);
 }
-/*Добавлено услови для сигнала, где температура должна быть больше 25 градусов.*/
-//
+/*Добавлено условие для сигнала, где температура должна быть больше 25 градусов.*/
+// https://drive.google.com/file/d/1qYLf5ibKOUPrNWLXxoloEL7RGGpHPyfp/view?usp=drive_link
