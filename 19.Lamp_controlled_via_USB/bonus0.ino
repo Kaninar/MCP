@@ -1,5 +1,5 @@
 #include <Arduino.h>
-// 1.Проверьте, попадает ли переданное число в диапазон значений, которые нужно передавать в analogWrite(). Передайте на компьютер сообщение об ошибке, если нет.
+
 #define LED_PIN 9
 
 String message;
@@ -12,7 +12,7 @@ void setup()
 
 void loop()
 {
-    while (Serial.available())
+    if (Serial.available())
     {
         char incomingChar = Serial.read();
 
@@ -22,13 +22,21 @@ void loop()
         }
         else if (incomingChar == '\n')
         {
-            analogWrite(LED_PIN, message.toInt());
+            int value = message.toInt();
+
+            if (value < 0 || value > 255)
+            {
+                Serial.println("Error");
+            }
+            else
+            {
+                analogWrite(LED_PIN, value);
+            }
 
             message = "";
         }
-        else
-        {
-            Serial.println("Error");
-        }
     }
 }
+
+/*Код идентичен тому, что был в скетче, но добавлена проверка на соответствие значений и вывода сообщения об ошибке.*/
+// https://drive.google.com/file/d/1H1HS7bvgHyU9dt4AcfHSZHuwLHzyjRzD/view?usp=drive_link
