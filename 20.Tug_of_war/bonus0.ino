@@ -1,5 +1,5 @@
 #include <Arduino.h>
-// 1.Вместо светодиодной шкалы подключите сервопривод и измените код таким образом, чтобы перетягивание демонстрировалось путем отклонения сервопривода от среднего положения.
+
 #include <Servo.h>
 
 #define BUZZER_PIN 0
@@ -28,17 +28,30 @@ void setup()
     attachInterrupt(INT0, pushP2, FALLING);
 }
 
+bool isStart = true;
+
 void loop()
 {
-    tone(BUZZER_PIN, 2000, 1000);
-    while (abs(score) < MAX_SCORE)
+    if (isStart)
+    {
+        tone(BUZZER_PIN, 2000, 1000);
+        isStart = false;
+    }
+
+    if (abs(score) < MAX_SCORE)
     {
         int angle = constrain((score + MAX_SCORE) * 9, 0, 180);
 
         myServo.write(angle);
     }
-    tone(BUZZER_PIN, 4000, 1000);
-    while (true)
+    else
     {
+        tone(BUZZER_PIN, 4000, 1000);
+
+        while (true)
+        {
+        }
     }
 }
+/*Серво привод подключен к пину 9. Цикл 'while' бы заменён на условное выражение. Флаг 'isStart' определяет должен ли звинеть стартовый писк, вычисляется угол поворота для сервопривода, после чего записывается.*/
+// https://drive.google.com/file/d/1I4Nfj-HM9D9Dln3oJZxehv_u4bk8o7y3/view?usp=drive_link
