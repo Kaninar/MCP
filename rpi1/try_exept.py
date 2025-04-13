@@ -12,3 +12,5 @@ try:
 except KeyboardInterrupt:
      print('program stoped')
     GPIO.cleanup()
+
+# Была добавлена конструкция `try...except`, которая перехватывает ошибку прерывания работы  программы при помощи клавиатуры комбинацией клавиш Ctrl + C.

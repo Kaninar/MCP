@@ -16,3 +16,7 @@ try:
 except KeyboardInterrupt:
     print("programs stoped from keyboard")
     GPIO.cleanup()
+
+'''
+Код аналогичен тому, что был в скетче. Если датчик засек движение, то диод загорается на 5 секунд, затем выключается.
+'''

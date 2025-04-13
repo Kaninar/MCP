@@ -18,14 +18,19 @@ try:
         GPIO.output(ledPin, False)
 
         counter += 1
-        
+
         if counter == 8:
             sleep(dash * 3)
         else:
             sleep(dot)
-            
+
         counter %= 9
-        
+
 except KeyboardInterrupt:
      print('program stoped from keyboard')
 GPIO.cleanup()
+
+'''
+При помощи переменной `counter` происходит перемещение между знаками сообщения. Текущий символ определяется в переменной `symbol`.
+Если переменная - счетчик доходит до крайнего индекса, то задержка перед повторением сообщения равно трём тире.
+'''
